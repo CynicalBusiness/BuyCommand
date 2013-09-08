@@ -1,11 +1,10 @@
 package net.mayateck.BuyCommand;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
 import net.milkbowl.vault.economy.Economy;
-import net.milkbowl.vault.economy.plugins.Economy_AEco;
-import net.milkbowl.vault.economy.plugins.Economy_BOSE6;
 import net.milkbowl.vault.economy.plugins.Economy_BOSE7;
 
 import org.bukkit.command.Command;
@@ -22,7 +21,8 @@ public class BuyCommandHandler implements CommandExecutor{
 	
 	@Override
 	public boolean onCommand(CommandSender s, Command cmd, String label, String[] args) {
-		if (cmd.getName().equalsIgnoreCase("buycommand")){
+		List<String> aliases = Arrays.asList("buycommand", "bcmd", "bc", "buycmd");
+		if (aliases.contains(cmd.getName())){
 			if (args.length>0){
 				Player p = (Player)s;
 				if (args[0].equalsIgnoreCase("info")){
