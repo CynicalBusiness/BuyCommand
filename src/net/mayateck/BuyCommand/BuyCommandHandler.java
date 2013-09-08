@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Set;
 
 import net.milkbowl.vault.economy.Economy;
-import net.milkbowl.vault.economy.plugins.Economy_BOSE7;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -43,7 +42,7 @@ public class BuyCommandHandler implements CommandExecutor{
 					if (nodepath==""){
 						s.sendMessage(BuyCommand.head+"Sorry, that buyable doesn't exist.");
 					} else {
-						Economy eco = new Economy_BOSE7(plugin);
+						Economy eco = BuyCommand.economy;
 						if (eco.has(p.getName(), plugin.getConfig().getDouble(nodepath+"cost"))){
 							if (args.length==1+plugin.getConfig().getInt(nodepath+"arguments")){
 								if (s.hasPermission("buycommand.buy."+nodename)){

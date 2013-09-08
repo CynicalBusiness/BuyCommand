@@ -25,9 +25,13 @@ public class BuyCommand extends JavaPlugin implements Listener{
 			this.saveDefaultConfig();
 			getCommand("buycommand").setExecutor(new BuyCommandHandler(this));
 			new EconomyHandler(this);
-			setupPermissions();
-			setupEconomy();
 			new NodeSetup(this);
+			if (!setupEconomy()){
+	            getLogger().severe(String.format("Unable to load, Vault dependency not present!"));
+	            getServer().getPluginManager().disablePlugin(this);
+	            return;
+	        }
+			setupPermissions();
 			// No need for event handlers.
 		getLogger().info("Ready.");
 		getLogger().info("#================================================#");
@@ -52,10 +56,11 @@ public class BuyCommand extends JavaPlugin implements Listener{
         return (permission != null);
     }
 	private boolean setupEconomy(){
-        RegisteredServiceProvider<Economy> economyProvider = getServer().getServicesManager().getRegistration(net.milkbowl.vault.economy.Economy.class);
-        if (economyProvider != null) {
-            economy = economyProvider.getProvider();
+        RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(net.milkbowl.vault.economy.Economy.class);
+        if (rsp != null) {
+            economy = rsp.getProvider();
+            return (economy != null);
         }
-        return (economy != null);
+        return false;
     }
 }
