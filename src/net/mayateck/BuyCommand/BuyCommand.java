@@ -23,7 +23,7 @@ public class BuyCommand extends JavaPlugin implements Listener{
 			// TODO: Check for updates.
 		getLogger().info("Setting up...");
 			this.saveDefaultConfig();
-			new BuyCommandHandler(this);
+			getCommand("buycommand").setExecutor(new BuyCommandHandler(this));
 			new EconomyHandler(this);
 			setupPermissions();
 			setupEconomy();
