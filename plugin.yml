@@ -4,6 +4,7 @@ version: 0.01.00Alpha
 website: 'https://github.com/Wehttam664/BuyCommand/wiki'
 author: Wehttam664
 depend: [Vault]
+softdepend: [EssentialsEco, BOSEconomy, iConomy]
 commands:
    buycommand:
       aliases: [bc, bcmd, buycmd]
