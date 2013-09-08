@@ -15,7 +15,7 @@ buyables:
     name: 'Example'
     cost: 8
     args: 1
-    msg: 'Doesn't do anything, just an example!'
+    msg: 'Does not do anything, just an example!'
     commands:
       - '/whisper %s You ran an example!'
       - '/whisper :arg1: You had an example run on you!'
