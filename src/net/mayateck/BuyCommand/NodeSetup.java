@@ -2,9 +2,6 @@ package net.mayateck.BuyCommand;
 
 import java.util.logging.Level;
 
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
-
 public class NodeSetup {
 	public BuyCommand plugin;
 	int hash = 0;
