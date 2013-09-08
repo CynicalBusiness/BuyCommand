@@ -1,0 +1,27 @@
+#===# BuyCommand by Wehttam664 #===#
+# For extra help, see the wiki on GitHub.
+
+# Format:
+# <node>:                             # The node is used for permissions. It creates a permission 'buycommand.buy.<node>'.
+#   name: '<full name>'               # This is the name the command will fire to.
+#   cost: <cost>                      # Cost to fire the command. Can be zero/negative.
+#   args: <number of arguments>       # Number of arguments for a command. 
+#   msg: <optional: response message> # Message displayed when info is requested. Set to '' to hide from info list.
+#   commands:                         # List of commands to fire (from console) upon purchase. (Do not include the slash!)
+#     - 'commandone'
+#     - 'commandtwo'
+buyables:
+  example:
+    name: 'Example'
+    cost: 8
+    args: 1
+    msg: 'Doesn't do anything, just an example!'
+    commands:
+      - '/whisper %s You ran an example!'
+      - '/whisper :arg1: You had an example run on you!'
+      - '/give %s dirt 1'
+     
+# Node builder stuff. 
+#===# DO NOT MODIFY THESE OR THE PLUGIN MAY BREAK! #===#
+node:
+  hash: 1
