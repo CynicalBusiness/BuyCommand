@@ -26,6 +26,7 @@ public class NodeSetup {
 	}
 	
 	public void reconfigure(){
+		plugin.saveConfig();
 		//FileConfiguration f = YamlConfiguration.loadConfiguration(plugin.getResource("plugin.yml"));
 	}
 }
