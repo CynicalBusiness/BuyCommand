@@ -30,6 +30,7 @@ public class BuyCommandHandler implements CommandExecutor{
 					Set<String> keys = plugin.getConfig().getConfigurationSection("buyables").getKeys(false);
 					s.sendMessage(" "+keys.size());
 					for (String buyable : keys){
+						buyable = "buyables."+buyable;
 						String name = plugin.getConfig().getString(buyable+".name");
 						double cost = plugin.getConfig().getDouble(buyable+".cost");
 						String desc = plugin.getConfig().getString(buyable+".msg");
