@@ -20,12 +20,13 @@ public class NodeSetup {
 				plugin.getLogger().info(" - Hash matches. Continuing with set-up...");
 			} else {
 				plugin.getLogger().info(" - Hash does not match! Re-configuring permissions to match config...");
-				reconfigure();
+				reconfigure(currentHash);
 			}
 		}
 	}
 	
-	public void reconfigure(){
+	public void reconfigure(int hash){
+		plugin.getConfig().set("node.hash", hash);
 		plugin.saveConfig();
 		//FileConfiguration f = YamlConfiguration.loadConfiguration(plugin.getResource("plugin.yml"));
 	}
