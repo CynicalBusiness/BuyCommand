@@ -95,9 +95,13 @@ public class BuyCommandHandler implements CommandExecutor{
 				}
 			} else {
 				s.sendMessage(BuyCommand.tag);
-				s.sendMessage(BuyCommand.head+"Normally help would be here.");
-				s.sendMessage(BuyCommand.head+"It's on my TO-DO list. :\\");
-				// TODO write help.
+				List<String> helpStr = Arrays.asList("&7/bc help &f- Displays this help.",
+														"&7/bc info &f- Lists all buyables and prices.",
+														"&7/bc [buyable] &f- Buys the specified buyable.",
+														"&c/bc reload &f- &8(&cAdmin&8) &fReloads the configuration.");
+				for (String text : helpStr){
+					s.sendMessage(parseColor(" "+text));
+				}
 				return true;
 			}
 		}
