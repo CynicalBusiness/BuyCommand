@@ -10,6 +10,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class BuyCommand extends JavaPlugin implements Listener{
 	public static String head = "&8[&3BuyCommand&8]&r ";
 	public static String tag = "";
+	public static String ncTag = "";
 	public static String ver = "";
 	public static PluginDescriptionFile pluginFile = null;
 	public static Permission permission = null;
@@ -20,8 +21,9 @@ public class BuyCommand extends JavaPlugin implements Listener{
 	public void onEnable(){
 		pluginFile = this.getDescription();
 		ver = pluginFile.getVersion();
+		ncTag = "#===# BuyCommand v"+ver+" by Wehttam664 #===#";
 		tag = BuyCommandHandler.parseColor("&8#&f===&8# &9BuyCommand &ev"+ver+" &fby &3&oWehttam664 &8#&f===&8#");
-		getLogger().info(tag);
+		getLogger().info(ncTag);
 		getLogger().info("Checking for updates...");
 			// TODO: Check for updates.
 		getLogger().info("Setting up...");
@@ -42,7 +44,7 @@ public class BuyCommand extends JavaPlugin implements Listener{
 	
 	@Override
 	public void onDisable(){
-		getLogger().info(tag);
+		getLogger().info(ncTag);
 		getLogger().info("Wrapping up...");
 			// Reset these in-case the thread lingers.
 			pluginFile = null;

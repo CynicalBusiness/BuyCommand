@@ -1,6 +1,6 @@
 name: BuyCommand
 main: net.mayateck.BuyCommand.BuyCommand
-version: 0.02.01Alpha
+version: 0.02.21Alpha
 website: 'https://github.com/Wehttam664/BuyCommand/wiki'
 author: Wehttam664
 depend: [Vault]
