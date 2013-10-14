@@ -1,6 +1,6 @@
 name: BuyCommand
 main: net.mayateck.BuyCommand.BuyCommand
-version: 0.01.00Alpha
+version: 0.02.01Alpha
 website: 'https://github.com/Wehttam664/BuyCommand/wiki'
 author: Wehttam664
 depend: [Vault]
@@ -19,5 +19,11 @@ permissions:
          buycommand.buy: true
          buycommand.admin: false
    buycommand.buy:
-      description: 'Permission to buy a command'
+      description: 'Permission to buy a command.'
+   buycommand.info:
+      description: 'Permission to view a list of buyables.'
+   buycommand.admin:
+      description: 'Permission to administrate BuyCommand.'
+      chilren:
+         buycommand.admin.reload: false
 
