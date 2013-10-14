@@ -17,9 +17,9 @@ buyables:
     args: 1
     msg: 'Does not do anything, just an example!'
     commands:
-      - '/whisper %s You ran an example!'
-      - '/whisper :arg1: You had an example run on you!'
-      - '/give %s dirt 1'
+      - 'whisper %s You ran an example!'
+      - 'whisper :arg1: You had an example run on you!'
+      - 'give %s dirt 1'
      
 # Node builder stuff. 
 #===# DO NOT MODIFY THESE OR THE PLUGIN MAY BREAK! #===#
